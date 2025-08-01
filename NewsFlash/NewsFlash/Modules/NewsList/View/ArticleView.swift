@@ -12,7 +12,7 @@ struct ArticleView: View {
     var body: some View {
         HStack(spacing: 10) {
             // Article image
-            AsyncImage(url: article.mediaUrl) { image in
+            AsyncImage(url: article.smallMediaImageUrl) { image in
                 image.resizable()
                     .scaledToFill()
             } placeholder: {

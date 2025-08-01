@@ -14,7 +14,7 @@ struct ArticleDetailView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 // Image
-                AsyncImage(url: article.mediaUrl) { image in
+                AsyncImage(url: article.largeMediaImageUrl) { image in
                     image.resizable()
                         .frame(height: 300)
                         .clipped()

@@ -35,10 +35,13 @@ struct Article: Codable, Identifiable {
     let media: [Media]
     let etaID: Int
     
-    var mediaUrl: URL? {
-        return URL(string: media.first?.mediaMetadata.first?.url ?? "") 
+    var smallMediaImageUrl: URL? {
+        return URL(string: media.first?.mediaMetadata.first?.url ?? "")
     }
     
+    var largeMediaImageUrl: URL? {
+        return URL(string: media.last?.mediaMetadata.last?.url ?? "")
+    }
     
     enum CodingKeys: String, CodingKey {
         case uri, url, id
