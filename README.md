@@ -59,7 +59,7 @@ The NewsFlashNetworking package is linked via Swift Package Manager
 - Tap on any article to see detailed information
 
 ## Testing
-Unit tests are written for all VIPER components:
+Unit tests are written for all VIPER components using Swift Testing:
 
 - Interactors
 - Presenters
