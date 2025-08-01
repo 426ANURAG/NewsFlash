@@ -14,7 +14,7 @@ struct ArticleView: View {
             // Article image
             AsyncImage(url: URL(string: article.media.first?.mediaMetadata.first?.url ?? "")) { image in
                 image.resizable()
-                image.scaledToFill()
+                    .scaledToFill()
             } placeholder: {
                 Color.gray.opacity(0.3)
             }

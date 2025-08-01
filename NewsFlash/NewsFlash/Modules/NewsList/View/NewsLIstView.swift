@@ -10,6 +10,7 @@ import SwiftUI
 struct NewsListView: View {
     @ObservedObject private var viewModel = NewsListViewModel()
     var presenter: NewsListPresenterProtocol?
+    @State var selectedArticle: Article?
     
     init(viewModel: NewsListViewModel) {
         self.viewModel = viewModel
@@ -26,7 +27,11 @@ struct NewsListView: View {
                     ScrollView {
                         LazyVStack(spacing: 12) {
                             ForEach(viewModel.news.results) { article in
-                                ArticleView(article: article)
+                                Button {
+                                    selectedArticle = article
+                                } label: {
+                                    ArticleView(article: article)
+                                }.buttonStyle(.plain)
                             }
                         }
                     }
@@ -38,6 +43,9 @@ struct NewsListView: View {
             .onAppear {
                 presenter?.viewDidLoad()
             }
+            .sheet(item: $selectedArticle) { article in
+                            ArticleDetailView(article: article)
+                        }
         }
     }
 }
