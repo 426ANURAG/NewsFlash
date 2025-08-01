@@ -43,7 +43,7 @@ Networking is handled by the **NewsFlashNetworking** Swift Package, hosted separ
 ### Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/NewsFlash.git
+git clone https://github.com/426ANURAG/NewsFlash.git
 cd NewsFlash
 ```
 
