@@ -67,11 +67,11 @@ Unit tests are written for all VIPER components:
 
 Networking package includes its own test suite
 
-Contributing
+###Contributing
 Feel free to fork this project and submit pull requests. For major changes, please open an issue first.
 
-License
+###License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Contact
+###Contact
 Created by [Anurag Sharma] - feel free to reach out!
