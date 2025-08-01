@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ArticleDetailView: View {
     let article: Article
-    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         ScrollView {
@@ -39,13 +38,6 @@ struct ArticleDetailView: View {
             .padding()
         }
         .presentationDragIndicator(.visible)
-        .toolbar {
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Close") {
-                    dismiss()
-                }
-            }
-        }
     }
 }
 

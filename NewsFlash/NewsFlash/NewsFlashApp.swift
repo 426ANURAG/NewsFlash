@@ -18,6 +18,7 @@ struct NewsFlashApp: App {
     var body: some Scene {
         WindowGroup {
             NewsListRouter.createModule()
+                .preferredColorScheme(.light)
         }
     }
     
