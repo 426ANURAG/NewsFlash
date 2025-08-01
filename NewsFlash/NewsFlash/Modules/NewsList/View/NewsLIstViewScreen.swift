@@ -7,10 +7,9 @@
 
 import SwiftUI
 
-struct NewsListView: View {
+struct NewsListViewScreen: View {
     @ObservedObject private var viewModel = NewsListViewModel()
     var presenter: NewsListPresenterProtocol?
-    @State var selectedArticle: Article?
     
     init(viewModel: NewsListViewModel) {
         self.viewModel = viewModel
@@ -28,7 +27,7 @@ struct NewsListView: View {
                         LazyVStack(spacing: 12) {
                             ForEach(viewModel.news.results) { article in
                                 Button {
-                                    selectedArticle = article
+                                    viewModel.selectedArticle = article
                                 } label: {
                                     ArticleView(article: article)
                                 }.buttonStyle(.plain)
@@ -43,12 +42,12 @@ struct NewsListView: View {
             .onAppear {
                 presenter?.viewDidLoad()
             }
-            .sheet(item: $selectedArticle) { article in
+            .sheet(item: $viewModel.selectedArticle) { article in
                             ArticleDetailView(article: article)
                         }
         }
     }
 }
 #Preview {
-    NewsListView(viewModel: NewsListViewModel())
+    NewsListViewScreen(viewModel: NewsListViewModel())
 }

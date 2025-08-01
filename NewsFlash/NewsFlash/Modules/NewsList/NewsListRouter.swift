@@ -10,12 +10,12 @@ protocol NewsListRouterProtocol: AnyObject {
     func moveToHome()
 }
 
-class NewsListRouter: NewsListRouterProtocol {
+final class NewsListRouter: NewsListRouterProtocol {
     
     ///Build module
     static func createModule() -> some View {
         let viewModel = NewsListViewModel()
-        var view = NewsListView(viewModel: viewModel)
+        var view = NewsListViewScreen(viewModel: viewModel)
         let presenter = NewsListPresenter()
         let interactor = NewsListInteractor()
         let router = NewsListRouter()

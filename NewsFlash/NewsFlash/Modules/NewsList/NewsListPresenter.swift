@@ -11,7 +11,7 @@ protocol NewsListPresenterProtocol: AnyObject {
     func viewDidLoad()
 }
 
-class NewsListPresenter: NewsListPresenterProtocol {
+final class NewsListPresenter: NewsListPresenterProtocol {
     weak var viewModel: NewsListViewModelProtocol?
     var interactor: NewsListInteractorInputProtocol?
     var router: NewsListRouterProtocol?

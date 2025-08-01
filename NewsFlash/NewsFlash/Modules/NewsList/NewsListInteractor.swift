@@ -16,7 +16,7 @@ protocol NewsListInteractorOutputProtocol: AnyObject {
     func didFetchData(_ data: NewsListEntity)
 }
 
-class NewsListInteractor: NewsListInteractorInputProtocol {
+final class NewsListInteractor: NewsListInteractorInputProtocol {
     weak var output: NewsListInteractorOutputProtocol?
     
     func fetchData() {

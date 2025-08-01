@@ -10,9 +10,10 @@ protocol NewsListViewModelProtocol: AnyObject {
     func startLoader(status: Bool)
 }
 
-class NewsListViewModel: ObservableObject, NewsListViewModelProtocol {
+final class NewsListViewModel: ObservableObject, NewsListViewModelProtocol {
     @Published var news: NewsListEntity = .init(status: "", copyright: "", numResults: 1, results: [])
     @Published var isLoading: Bool = false
+    @Published var selectedArticle: Article?
 
     func displayNewsList(_ news: NewsListEntity) {
         DispatchQueue.main.async {[weak self] in
